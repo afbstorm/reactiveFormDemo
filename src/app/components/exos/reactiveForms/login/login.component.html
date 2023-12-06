@@ -1,0 +1,9 @@
+<form (ngSubmit)="authentication()">
+  <label for="pseudo">Pseudo</label>
+  <input type="text" [(ngModel)]="pseudo" name="pseudo">
+
+  <label for="password">Password</label>
+  <input type="password" [(ngModel)]="password" name="password">
+
+  <button type="submit">Login</button>
+</form>

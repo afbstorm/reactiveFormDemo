@@ -1,0 +1,141 @@
+
+<section class="row">
+  <h2>Reactive Form Exercice</h2>
+  <form [formGroup]="formCv" class="col s12">
+    <div class="input-field col s6">
+      <input type="text" formControlName="nom" placeholder="Nom de famille...">
+
+      <ng-container *ngIf="formCv.controls['nom'].errors! && formCv.controls['nom'].touched">
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['nom'].errors!['required']">
+            Est requis
+        </span>
+
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['nom'].errors!['minlength']">
+             Dois être supérieur à {{formCv.controls['nom'].errors!['minlength'].requiredLength}} caractères, actuellement {{formCv.controls['nom'].errors!['minlength'].actualLength}} caractères
+      </span>
+
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['nom'].errors!['maxlength']">
+             Est requis
+      </span>
+      </ng-container>
+    </div>
+    <div class="input-field col s6">
+      <input type="text" formControlName="prenom" placeholder="Prénom...">
+
+      <ng-container *ngIf="formCv.controls['prenom'].errors! && formCv.controls['prenom'].touched">
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['prenom'].errors!['required']">
+            Est requis
+        </span>
+
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['prenom'].errors!['minlength']">
+             Dois être supérieur à {{formCv.controls['prenom'].errors!['minlength'].requiredLength}} caractères, actuellement {{formCv.controls['prenom'].errors!['minlength'].actualLength}} caractères
+      </span>
+
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['prenom'].errors!['maxlength']">
+             Est requis
+      </span>
+      </ng-container>
+    </div>
+    <div class="input-field col s6">
+      <input formControlName="email" type="email" placeholder="Email">
+
+      <ng-container *ngIf="formCv.controls['email'].errors! && formCv.controls['email'].touched">
+       <span data-error="wrong" data-success="right" *ngIf="formCv.controls['email'].errors!['email']">
+             {{formCv.controls['email'].errors!['email']}}
+        </span>
+
+      </ng-container>
+    </div>
+    <div class="input-field col s6">
+      <input formControlName="tel" type="tel" placeholder="Tel">
+
+      <ng-container *ngIf="formCv.controls['tel'].errors! && formCv.controls['tel'].touched">
+       <span data-error="wrong" data-success="right" *ngIf="formCv.controls['tel'].errors!['tel']">
+             {{formCv.controls['tel'].errors!['tel']}}
+        </span>
+
+      </ng-container>
+    </div>
+    <div class="input-field col s6">
+      <input type="text" formControlName="pseudo" placeholder="Pseudo...">
+
+      <ng-container *ngIf="formCv.controls['pseudo'].errors! && formCv.controls['pseudo'].touched">
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['pseudo'].errors!['required']">
+            Est requis
+        </span>
+
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['pseudo'].errors!['minlength']">
+             Dois être supérieur à {{formCv.controls['pseudo'].errors!['minlength'].requiredLength}} caractères, actuellement {{formCv.controls['pseudo'].errors!['minlength'].actualLength}} caractères
+      </span>
+
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['pseudo'].errors!['maxlength']">
+             Est requis
+      </span>
+      </ng-container>
+    </div>
+    <div formGroupName="adresse">
+      <div class="input-field col s6">
+        <input formControlName="rue" type="text" placeholder="Rue">
+
+        <ng-container *ngIf="formCv.get('adresse.rue')?.errors && formCv.get('adresse.rue')?.touched">
+       <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.rue')?.errors?.['rue']">
+             {{formCv.get('adresse.rue')?.errors?.['rue']}}
+       </span>
+        </ng-container>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="num" type="text" placeholder="Numéro de rue">
+
+        <ng-container *ngIf="formCv.get('adresse.num')?.errors && formCv.get('adresse.num')?.touched">
+       <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.num')?.errors?.['num']">
+             {{formCv.get('adresse.num')?.errors?.['num']}}
+          </span>
+
+        </ng-container>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="ville" type="text" placeholder="Ville">
+
+        <ng-container *ngIf="formCv.get('adresse.ville')?.errors && formCv.get('adresse.ville')?.touched">
+       <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.ville')?.errors?.['ville']">
+             {{formCv.get('adresse.ville')?.errors?.['ville']}}
+          </span>
+
+        </ng-container>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="cp" type="text" placeholder="Code postal">
+
+        <ng-container *ngIf="formCv.get('adresse.cp')?.errors && formCv.get('adresse.cp')?.touched">
+       <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.cp')?.errors?.['cp']">
+             {{formCv.get('adresse.cp')?.errors?.['cp']}}
+          </span>
+
+        </ng-container>
+      </div>
+    </div>
+    <div class="input-field col s6">
+      <input formControlName="titreFonction" type="text" placeholder="Titre de fonction">
+
+      <ng-container *ngIf="formCv.controls['titreFonction'].errors! && formCv.controls['titreFonction'].touched">
+       <span data-error="wrong" data-success="right" *ngIf="formCv.controls['titreFonction'].errors!['titreFonction']">
+             {{formCv.controls['titreFonction'].errors!['titreFonction']}}
+        </span>
+
+      </ng-container>
+    </div>
+    <div class="input-field col s6">
+      <input formControlName="descFonction" type="text" placeholder="Description de votre fonction">
+
+      <ng-container *ngIf="formCv.controls['descFonction'].errors! && formCv.controls['descFonction'].touched">
+       <span data-error="wrong" data-success="right" *ngIf="formCv.controls['descFonction'].errors!['descFonction']">
+             {{formCv.controls['descFonction'].errors!['descFonction']}}
+        </span>
+
+      </ng-container>
+    </div>
+    <button class="card-panel teal lighten-2" (click)="submitForm()" >
+      Envoyer
+    </button>
+  </form>
+</section>
