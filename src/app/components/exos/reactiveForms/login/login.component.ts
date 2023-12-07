@@ -1,4 +1,4 @@
-import {Component, OnDestroy} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { AuthService } from "../services/auth.service";
 import { Subscription } from 'rxjs';
 import {Router} from "@angular/router";
@@ -7,7 +7,7 @@ import {Router} from "@angular/router";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnDestroy {
+export class LoginComponent implements OnDestroy, OnInit {
   pseudo: string = '';
   password: string = '';
   isAuthSubscription: Subscription;
@@ -29,6 +29,10 @@ export class LoginComponent implements OnDestroy {
   }
   authentication() {
     this._auth.login(this.pseudo, this.password);
+  }
+
+  ngOnInit() {
+    localStorage.getItem('isAuth')
   }
 
   ngOnDestroy() {

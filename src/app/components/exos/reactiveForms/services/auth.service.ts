@@ -8,7 +8,9 @@ export class AuthService {
 
   isAuth: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  constructor() { }
+  constructor() {
+    localStorage.getItem('isAuth') ? this.isAuth.next(true) : null
+  }
 
   login (pseudo: string, password: string) {
     if (pseudo === 'test' && password === 'test') {
