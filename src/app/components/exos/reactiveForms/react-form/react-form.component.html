@@ -5,16 +5,16 @@
     <div class="input-field col s6">
       <input type="text" formControlName="nom" placeholder="Nom de famille...">
 
-      <ng-container *ngIf="formCv.controls['nom'].errors! && formCv.controls['nom'].touched">
-        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['nom'].errors!['required']">
+      <ng-container *ngIf="formCv.controls['nom'].errors && formCv.controls['nom'].touched">
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['nom'].errors?.['required']" class="helper-text">
             Est requis
         </span>
 
-        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['nom'].errors!['minlength']">
-             Dois être supérieur à {{formCv.controls['nom'].errors!['minlength'].requiredLength}} caractères, actuellement {{formCv.controls['nom'].errors!['minlength'].actualLength}} caractères
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['nom'].errors?.['minlength']" class="helper-text">
+             Dois être supérieur à {{formCv.controls['nom'].errors?.['minlength'].requiredLength}} caractères, actuellement {{formCv.controls['nom'].errors?.['minlength'].actualLength}} caractères
       </span>
 
-        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['nom'].errors!['maxlength']">
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['nom'].errors?.['maxlength']" class="helper-text">
              Est requis
       </span>
       </ng-container>
@@ -22,16 +22,16 @@
     <div class="input-field col s6">
       <input type="text" formControlName="prenom" placeholder="Prénom...">
 
-      <ng-container *ngIf="formCv.controls['prenom'].errors! && formCv.controls['prenom'].touched">
-        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['prenom'].errors!['required']">
+      <ng-container *ngIf="formCv.controls['prenom'].errors && formCv.controls['prenom'].touched">
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['prenom'].errors?.['required']" class="helper-text">
             Est requis
         </span>
 
-        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['prenom'].errors!['minlength']">
-             Dois être supérieur à {{formCv.controls['prenom'].errors!['minlength'].requiredLength}} caractères, actuellement {{formCv.controls['prenom'].errors!['minlength'].actualLength}} caractères
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['prenom'].errors?.['minlength']" class="helper-text">
+             Dois être supérieur à {{formCv.controls['prenom'].errors?.['minlength'].requiredLength}} caractères, actuellement {{formCv.controls['prenom'].errors?.['minlength'].actualLength}} caractères
       </span>
 
-        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['prenom'].errors!['maxlength']">
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['prenom'].errors?.['maxlength']" class="helper-text">
              Est requis
       </span>
       </ng-container>
@@ -39,9 +39,9 @@
     <div class="input-field col s6">
       <input formControlName="email" type="email" placeholder="Email">
 
-      <ng-container *ngIf="formCv.controls['email'].errors! && formCv.controls['email'].touched">
-       <span data-error="wrong" data-success="right" *ngIf="formCv.controls['email'].errors!['email']">
-             {{formCv.controls['email'].errors!['email']}}
+      <ng-container *ngIf="formCv.controls['email'].errors && formCv.controls['email'].touched">
+       <span data-error="wrong" data-success="right" *ngIf="formCv.controls['email'].errors?.['email']" class="helper-text">
+             {{formCv.controls['email'].errors?.['email']}}
         </span>
 
       </ng-container>
@@ -49,9 +49,9 @@
     <div class="input-field col s6">
       <input formControlName="tel" type="tel" placeholder="Tel">
 
-      <ng-container *ngIf="formCv.controls['tel'].errors! && formCv.controls['tel'].touched">
-       <span data-error="wrong" data-success="right" *ngIf="formCv.controls['tel'].errors!['tel']">
-             {{formCv.controls['tel'].errors!['tel']}}
+      <ng-container *ngIf="formCv.controls['tel'].errors && formCv.controls['tel'].touched">
+       <span data-error="wrong" data-success="right" *ngIf="formCv.controls['tel'].errors?.['tel']" class="helper-text">
+             {{formCv.controls['tel'].errors?.['tel']}}
         </span>
 
       </ng-container>
@@ -59,16 +59,16 @@
     <div class="input-field col s6">
       <input type="text" formControlName="pseudo" placeholder="Pseudo...">
 
-      <ng-container *ngIf="formCv.controls['pseudo'].errors! && formCv.controls['pseudo'].touched">
-        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['pseudo'].errors!['required']">
+      <ng-container *ngIf="formCv.controls['pseudo'].errors && formCv.controls['pseudo'].touched">
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['pseudo'].errors?.['required']" class="helper-text">
             Est requis
         </span>
 
-        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['pseudo'].errors!['minlength']">
-             Dois être supérieur à {{formCv.controls['pseudo'].errors!['minlength'].requiredLength}} caractères, actuellement {{formCv.controls['pseudo'].errors!['minlength'].actualLength}} caractères
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['pseudo'].errors?.['minlength']" class="helper-text">
+             Dois être supérieur à {{formCv.controls['pseudo'].errors?.['minlength'].requiredLength}} caractères, actuellement {{formCv.controls['pseudo'].errors?.['minlength'].actualLength}} caractères
       </span>
 
-        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['pseudo'].errors!['maxlength']">
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['pseudo'].errors?.['maxlength']" class="helper-text">
              Est requis
       </span>
       </ng-container>
@@ -78,17 +78,23 @@
         <input formControlName="rue" type="text" placeholder="Rue">
 
         <ng-container *ngIf="formCv.get('adresse.rue')?.errors && formCv.get('adresse.rue')?.touched">
-       <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.rue')?.errors?.['rue']">
-             {{formCv.get('adresse.rue')?.errors?.['rue']}}
+       <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.rue')?.errors?.['required']" class="helper-text">
+             Est requis
        </span>
+          <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.rue')?.errors?.['minlength']" class="helper-text">
+             Dois être supérieur à {{formCv.get('adresse.rue')?.errors?.['minlength'].requiredLength}} caractères, actuellement {{formCv.get('adresse.rue')?.errors?.['minlength'].actualLength}} caractères
+      </span>
         </ng-container>
       </div>
       <div class="input-field col s6">
         <input formControlName="num" type="text" placeholder="Numéro de rue">
 
         <ng-container *ngIf="formCv.get('adresse.num')?.errors && formCv.get('adresse.num')?.touched">
-       <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.num')?.errors?.['num']">
-             {{formCv.get('adresse.num')?.errors?.['num']}}
+       <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.num')?.errors?.['required']" class="helper-text">
+             Est requis
+          </span>
+          <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.num')?.errors?.['maxlength']" class="helper-text">
+             Doit être de maximum {{formCv.get('adresse.num')?.errors?.['maxlength'].requiredLength}} chiffres
           </span>
 
         </ng-container>
@@ -97,8 +103,14 @@
         <input formControlName="ville" type="text" placeholder="Ville">
 
         <ng-container *ngIf="formCv.get('adresse.ville')?.errors && formCv.get('adresse.ville')?.touched">
-       <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.ville')?.errors?.['ville']">
-             {{formCv.get('adresse.ville')?.errors?.['ville']}}
+       <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.ville')?.errors?.['required']" class="helper-text">
+             Est requis
+          </span>
+          <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.ville')?.errors?.['minlength']" class="helper-text">
+             Doit être de minimum {{formCv.get('adresse.ville')?.errors?.['minlength'].requiredLength}}
+          </span>
+          <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.ville')?.errors?.['maxlength']" class="helper-text">
+             Doit être de maximum {{formCv.get('adresse.ville')?.errors?.['maxlength'].requiredLength}}
           </span>
 
         </ng-container>
@@ -107,8 +119,11 @@
         <input formControlName="cp" type="text" placeholder="Code postal">
 
         <ng-container *ngIf="formCv.get('adresse.cp')?.errors && formCv.get('adresse.cp')?.touched">
-       <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.cp')?.errors?.['cp']">
+       <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.cp')?.errors?.['cp']" class="helper-text">
              {{formCv.get('adresse.cp')?.errors?.['cp']}}
+          </span>
+          <span data-error="wrong" data-success="right" *ngIf="formCv.get('adresse.cp')?.errors?.['minlength']" class="helper-text">
+             Doit être de {{formCv.get('adresse.cp')?.errors?.['minlength'].requiredLength}} chiffres
           </span>
 
         </ng-container>
@@ -117,24 +132,37 @@
     <div class="input-field col s6">
       <input formControlName="titreFonction" type="text" placeholder="Titre de fonction">
 
-      <ng-container *ngIf="formCv.controls['titreFonction'].errors! && formCv.controls['titreFonction'].touched">
-       <span data-error="wrong" data-success="right" *ngIf="formCv.controls['titreFonction'].errors!['titreFonction']">
-             {{formCv.controls['titreFonction'].errors!['titreFonction']}}
+      <ng-container *ngIf="formCv.controls['titreFonction'].errors && formCv.controls['titreFonction'].touched">
+       <span data-error="wrong" data-success="right" *ngIf="formCv.controls['titreFonction'].errors?.['required']" class="helper-text">
+             Est requis
+        </span>
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['titreFonction'].errors?.['minlength']" class="helper-text">
+             Minimum {{formCv.controls['titreFonction'].errors?.['minlength'].requiredLength}} caractères
+        </span>
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['titreFonction'].errors?.['maxlength']" class="helper-text">
+              Maximum {{formCv.controls['titreFonction'].errors?.['maxlength'].requiredLength}} caractères
         </span>
 
       </ng-container>
     </div>
     <div class="input-field col s6">
-      <input formControlName="descFonction" type="text" placeholder="Description de votre fonction">
+      <textarea formControlName="descFonction" type="text" placeholder="Description de votre fonction">
+      </textarea>
 
-      <ng-container *ngIf="formCv.controls['descFonction'].errors! && formCv.controls['descFonction'].touched">
-       <span data-error="wrong" data-success="right" *ngIf="formCv.controls['descFonction'].errors!['descFonction']">
-             {{formCv.controls['descFonction'].errors!['descFonction']}}
+      <ng-container *ngIf="formCv.controls['descFonction'].errors && formCv.controls['descFonction'].touched">
+       <span data-error="wrong" data-success="right" *ngIf="formCv.controls['descFonction'].errors?.['required']" class="helper-text">
+             Merci ce compléter la description de votre fonction
+        </span>
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['descFonction'].errors?.['minlength']" class="helper-text">
+             Minimum {{formCv.controls['descFonction'].errors?.['minlength'].requireLength}} caractères
+        </span>
+        <span data-error="wrong" data-success="right" *ngIf="formCv.controls['descFonction'].errors?.['maxlength']" class="helper-text">
+             Maximum {{formCv.controls['descFonction'].errors?.['maxlength'].requireLength}} caractères
         </span>
 
       </ng-container>
     </div>
-    <button class="card-panel teal lighten-2" (click)="submitForm()" >
+    <button class="card-panel teal lighten-2" (click)="submitForm()" *ngIf="formCv.valid">
       Envoyer
     </button>
   </form>

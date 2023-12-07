@@ -19,10 +19,10 @@ interface IAdresse {
 })
 export class ReactFormComponent {
 
-  nom: string = '';
+  nom: string = 'web';
   prenom: string = '';
   email: string = '';
-  tel: string = '';
+  tel!: number;
   pseudo: string = '';
   adresse!: IAdresse;
   titreFonction: string = '';
@@ -41,7 +41,7 @@ export class ReactFormComponent {
         pseudo : ["", [Validators.minLength(8), Validators.maxLength(20), Validators.required]],
         adresse: this.fb.group({
           rue: ["", [Validators.minLength(3), Validators.maxLength(30), Validators.required]],
-          num: [null, [Validators.minLength(1), Validators.maxLength(3), Validators.required]],
+          num: [null, [Validators.maxLength(3), Validators.required]],
           ville: ["", [Validators.minLength(3), Validators.maxLength(30), Validators.required]],
           cp: [null, [Validators.minLength(4), Validators.maxLength(4), Validators.required]]
         }, { validators: confirmAdressValidator }),
