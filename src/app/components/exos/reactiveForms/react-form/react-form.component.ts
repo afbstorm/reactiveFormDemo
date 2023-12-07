@@ -4,29 +4,12 @@ import {emailValidator} from "../shared/validators/email.validator";
 import {telValidator} from "../shared/validators/tel.validator";
 import {confirmAdressValidator} from "../shared/validators/confirmAdress.validator";
 
-interface IAdresse {
-  rue: string;
-  num: number;
-  ville: string;
-  cp: number;
-}
-
-
 @Component({
   selector: 'app-react-form',
   templateUrl: './react-form.component.html',
   styleUrls: ['./react-form.component.scss']
 })
 export class ReactFormComponent {
-
-  nom: string = 'web';
-  prenom: string = '';
-  email: string = '';
-  tel!: number;
-  pseudo: string = '';
-  adresse!: IAdresse;
-  titreFonction: string = '';
-  descFonction: string = '';
 
   formCv: FormGroup = new FormGroup({})
 
